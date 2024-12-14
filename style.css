@@ -360,25 +360,6 @@ body, html {
     src: url('./fonts/Starborn.ttf');
 }
 
-@font-face {
-    font-family: 'HeaderFont';
-    src: url('./fonts/coolvetica.otf');
-}
-
-@font-face {
-    font-family: 'TextFont';
-    src: url('./fonts/coolvetica.otf');
-}
-
-@font-face {
-    font-family: 'SectionHeaderFont';
-    src: url('./fonts/Akira\ Expanded\ Demo.otf');
-}
-
-@font-face {
-    font-family: 'H2Font';
-    src: url('./fonts/Minecraftia-Regular.ttf');
-}
 
 @keyframes fall {
     from {
