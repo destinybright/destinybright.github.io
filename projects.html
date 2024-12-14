@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Slideshow</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Name Section -->
+    <div id="nameSection2">
+        <a href="index.html" id="nameText2">
+            <span class="word">destiny</span><br>
+            <span class="word">bright</span>
+        </a>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="button-container">
+        <a href="about.html" class="button button-slide">
+            About Me
+            <div class="button-slide--green button-slide-bg"></div>
+        </a>
+        <a href="projects.html" class="button button-slide">
+            Projects
+            <div class="button-slide--green button-slide-bg"></div>
+        </a>
+        <a href="contact.html" class="button button-slide">
+            Contact
+            <div class="button-slide--green button-slide-bg"></div>
+        </a>
+    </div>
+
+    <!-- Projects Slideshow Section -->
+    <section id="projects" class="content">
+        <h1>PROJECTS</h1>
+        <div class="slideshow-container">
+
+            <!-- Project Slides -->
+            <div class="project fade">
+                <div class="numbertext">1 / 3</div>
+                <img class="projectImage" src="images/xdice.png" alt="XDice" style="width:325px">
+                <h2>XDice</h2>
+                <p>An iOS application to roll dice for tabletop games such as Dungeons and Dragons using Swift.</p>
+                <p>
+                <a href="https://github.com/destinybright/Xdice" id="github-link">
+                    Github
+                </a>
+                </p>
+            </div>
+
+            <div class="project fade">
+                <div class="numbertext">2 / 3</div>
+                <img class="projectImage" src="images/exercise.png" alt="Exercise" style="width:325px">
+                <h2>Exercise App</h2>
+                <p>A web app to track exercises using MongoDB, Express, React, and Node.js to perform CRUD operations.</p>
+                <p>
+                <a href="https://github.com/destinybright/exercise-app" id="github-link">
+                    Github
+                </a>
+                </p>
+            </div>
+
+            <div class="project fade">
+                <div class="numbertext">3 / 3</div>
+                <img class="projectImage" src="images/pooby.png" alt="Pooby" style="width:325px">
+                <h2>Pooby</h2>
+                <p>A web application that lets you hatch and play with a cute pet named Pooby.</p>
+                <p><a href="https://destinybright.github.io/html/index.html" id="github-link">
+                    Github
+                </a></p>
+            </div>
+
+            <!-- Next and Previous Buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The Dots/Circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="./slides.js"></script>
+</body>
+</html>
