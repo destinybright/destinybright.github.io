@@ -1,27 +1,23 @@
 const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint, Constraint } = Matter;
 
-// Create engine and world
 const engine = Engine.create();
 const world = engine.world;
 
-// Set up the canvas
 const canvas = document.getElementById('matterCanvas');
-canvas.style.width = '100%'; // Set canvas width to 100%
-canvas.width = window.innerWidth; // Set canvas width to window width
+canvas.style.width = '100%';
+canvas.width = window.innerWidth;
 
-// Fixed parameters
-const cradleSize = 40; // Fixed size of the balls (radius)
+const cradleSize = 40;
 const numberOfBalls = 5;
-const separation = 1.95; // Separation factor for spacing the balls
-const cradleLength = 250; // Fixed length of the strings (lines)
-const cradleY = 0; // Top Y position of the cradle (top of the canvas)
+const separation = 1.95;
+const cradleLength = 250;
+const cradleY = 0;
 
-// Calculate canvas height based on cradle
-const canvasHeight = cradleLength + cradleSize + 20; // Line length + ball size + 20px gap
-canvas.style.height = `${canvasHeight}px`; // Set canvas height to calculated value
-canvas.height = canvasHeight; // Set canvas height
+const canvasHeight = cradleLength + cradleSize + 20;
+canvas.style.height = `${canvasHeight}px`;
+canvas.height = canvasHeight;
 
-// Create a renderer
+
 const render = Render.create({
     canvas: canvas,
     engine: engine,
@@ -29,7 +25,7 @@ const render = Render.create({
         width: canvas.width,
         height: canvas.height,
         wireframes: false,
-        background: 'transparent', // Set background to transparent
+        background: 'transparent',
     }
 });
 
@@ -37,12 +33,11 @@ Render.run(render);
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-// Create a thin and transparent ground
 const ground = Bodies.rectangle(canvas.width / 2, canvas.height - 5, canvas.width, 10, {
     isStatic: true,
     render: {
-        fillStyle: 'transparent', // Set fillStyle to transparent
-        strokeStyle: 'transparent' // Optionally set strokeStyle to transparent as well
+        fillStyle: 'transparent',
+        strokeStyle: 'transparent'
     }
 });
 
@@ -77,9 +72,9 @@ function createNewtonsCradle(xx, yy, number, size, length) {
         });
 
         const constraint = Constraint.create({
-            pointA: { x: circleX, y: yy }, // Fixed point at the top (y: 0)
+            pointA: { x: circleX, y: yy },
             bodyB: circle,
-            stiffness: 1, // Stiffness set to 1 to prevent stretching
+            stiffness: 1,
             length: length,
             render: {
                 strokeStyle: '#FFF',
@@ -107,10 +102,8 @@ let newtonsCradle = createNewtonsCradle(cradleX, cradleY, numberOfBalls, cradleS
 // Add the ground and Newton's Cradle to the world
 Composite.add(world, [ground, newtonsCradle]);
 
-// Add mouse control
 const mouse = Mouse.create(render.canvas, {
     pixelRatio: render.options.pixelRatio,
-    // Enable touch scrolling
     allowTouchScrolling: true
 });
 
@@ -119,47 +112,38 @@ const mouseConstraint = MouseConstraint.create(engine, {
     constraint: {
         stiffness: 0.2,
         render: {
-            visible: false // Don't show the dragging constraint line
+            visible: false
         }
     }
 });
 
 Composite.add(world, mouseConstraint);
 
-// Function to reposition the cradle when resizing
 function repositionCradle() {
-    // Update canvas width
     canvas.width = window.innerWidth;
     render.options.width = canvas.width;
     render.canvas.width = canvas.width;
 
-    // Recalculate the starting X position of the cradle to keep it centered
     cradleX = calculateCradlePosition(numberOfBalls, cradleSize, separation);
 
     for (let i = 0; i < newtonsCradle.bodies.length; i++) {
         const circleX = cradleX + i * (cradleSize * separation);
         const circleY = cradleY + cradleLength;
 
-        // Reposition balls to maintain fixed vertical position
         Matter.Body.setPosition(newtonsCradle.bodies[i], {
             x: circleX,
             y: circleY
         });
 
-        // Update the constraints
         newtonsCradle.constraints[i].pointA.x = circleX;
-        newtonsCradle.constraints[i].pointA.y = cradleY; // Ensure the constraint point is at the top (y: 0)
-        // Constraints length remains fixed
+        newtonsCradle.constraints[i].pointA.y = cradleY;
     }
 
-    // Adjust ground position
     Matter.Body.setPosition(ground, { x: canvas.width / 2, y: canvas.height - 5 });
     ground.bounds.min.x = 0;
     ground.bounds.max.x = canvas.width;
 }
 
-// Keep the canvas and physics bodies responsive to window resizing
 window.addEventListener('resize', repositionCradle);
 
-// Initial setup
 repositionCradle();
