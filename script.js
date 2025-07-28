@@ -23,6 +23,32 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+let lastSparkleTime = 0;
+
+document.addEventListener("mousemove", function (e) {
+  const now = Date.now();
+  if (now - lastSparkleTime > 30) {
+    createSparkle(e.clientX, e.clientY);
+    lastSparkleTime = now;
+  }
+});
+
+function createSparkle(x, y) {
+    const sparkle = document.createElement("div");
+    sparkle.className = "modern-sparkle";
+
+    sparkle.style.left = `${x + (Math.random() - 0.5) * 20}px`;
+    sparkle.style.top = `${y + (Math.random() - 0.5) * 20}px`;
+
+    const pastelColors = ["#b1cdf1ff", "#a0d8ef", "#d4eaffff", "#81c4f3ff", "#daf6ffff", "#96c8fdff"];
+    sparkle.style.background = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 800);
+}
+
+
+
 function showSection(sectionId) {
     document.querySelectorAll('.content').forEach(section => {
         section.style.display = 'none';

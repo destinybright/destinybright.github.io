@@ -47,11 +47,11 @@ function createNewtonsCradle(xx, yy, number, size, length) {
 
     // Define an array of colors
     const colors = [
-        '#4e6a6c', // Color for ball 1
-        '#959D90', // Color for ball 2
-        '#D1EBDB', // Color for ball 3
-        '#D0D5CE', // Color for ball 4
-        '#EFECE9'  // Color for ball 5
+        '#315a77ff', // Color for ball 1
+        '#4371a3ff', // Color for ball 2
+        '#5b93c0ff', // Color for ball 3
+        '#77b1deff', // Color for ball 4
+        '#e0f1ffff'  // Color for ball 5
     ];
 
     for (let i = 0; i < number; i++) {
