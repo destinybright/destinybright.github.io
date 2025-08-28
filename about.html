@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <canvas id="matterCanvas"></canvas>
     <div id="nameSection2">
         <a href="index.html" id="nameText2">
             <span class="word">destiny</span><br>
@@ -29,23 +30,24 @@
     </div>
 
     <section id="aboutMe" class="content">
-        
-        <h1>About Me</h1>
-        
-            <br>
-            <img class="des" src="images/des.jpg">
-            <br><br>
-            <p>Hello World! My name is Destiny Bright.<br>
-            I am currently an undergraduate CS student at Oregon State University.<br><br>
+  <h1>About Me</h1>
+  <div class="about-container">
+    <img class="des" src="images/des.jpg" alt="Picture of Destiny Bright">
+    <div class="about-text">
+      <p>Hello World! My name is Destiny Bright.<br>
+      I am currently an undergraduate CS student at Oregon State University.<br><br>
 
-            My ultimate career aspiration is to use my skills to improve people's lives. Whether that's focusing on accessibility in technology or designing immersive video games that provide an enjoyable escape, I aim to create meaningful experiences that benefit others. <br><br>
+      My ultimate career aspiration is to use my skills to improve people's lives. Whether that's focusing on accessibility in technology or designing immersive video games that provide an enjoyable escape, I aim to create meaningful experiences that benefit others.<br><br>
 
-            I am comfortable coding in JavaScript, TypeScript, Python, SQL, Swift, R, HTML, and CSS.
-            When I am not taking classes or coding, I love to play video games, draw, and crochet!
-            </p>
-      
-    </section>
-
+      I am comfortable coding in JavaScript, TypeScript, Python, SQL, Swift, R, HTML, and CSS.
+      When I am not taking classes or coding, I love to play video games, draw, and crochet!</p>
+    </div>
+  </div>
+</section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"
+        integrity="sha512-3CP+e7z5ieYYTIyvRvV3eGVYR67yXg5V2mWfg8pEJJd2mlh8tG/cnDv5scTmRztEYHTksBlpPOmxFOiMtHfZdQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./sketch.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
