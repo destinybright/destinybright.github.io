@@ -24,13 +24,11 @@ Render.run(render);
 const runner = Runner.create();
 Runner.run(runner, engine);
 
-// Cybercore colors
 const cyberColors = [
   '#e0f7ff', '#b3e5fc', '#cceeff', '#f0f8ff', '#d0f0ff',
   '#e6faff', '#d9ecff', '#b0c4de', '#e0e0e0', '#ffffff'
 ];
 
-// Star shape
 function createStarVertices(cx, cy, outerRadius, innerRadius, points = 5) {
   const angle = Math.PI / points;
   const vertices = [];
@@ -45,7 +43,6 @@ function createStarVertices(cx, cy, outerRadius, innerRadius, points = 5) {
   return vertices;
 }
 
-// Trail effects
 let trailParticles = [];
 
 function spawnTrail(x, y, color) {
@@ -75,7 +72,6 @@ function drawTrails(ctx) {
   }
 }
 
-// Spawn a star
 function spawnCyberStar() {
   const x = Math.random() * canvas.width;
   const outerR = 28 + Math.random() * 6;
@@ -103,7 +99,6 @@ function spawnCyberStar() {
   Composite.add(world, star);
 }
 
-// Star trail effect
 Events.on(engine, 'afterUpdate', () => {
   const bodies = Composite.allBodies(world);
   for (let i = 0; i < bodies.length; i++) {
@@ -116,7 +111,6 @@ Events.on(engine, 'afterUpdate', () => {
   }
 });
 
-// Animate trails
 (function trailLoop() {
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -125,10 +119,8 @@ Events.on(engine, 'afterUpdate', () => {
 })();
 
 
-// Star spawn timer
 setInterval(spawnCyberStar, 200);
 
-// Resize handler
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;

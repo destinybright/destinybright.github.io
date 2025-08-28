@@ -12,7 +12,6 @@ body {
 
 #nameSection {
     text-align: center;
-
 }
 
 #nameSection2 {
@@ -21,20 +20,25 @@ body {
     margin-bottom: 0px;
 }
 
-#aboutMe, #projects, #home,
+#aboutMe, #projects, #home, #contact,
 .info, .title {
     text-align: center;
     background: linear-gradient(to bottom, #ffffff, #f4f4f4);
     border-radius: 20px;
     border: 1px solid #d0d0d0;
     box-shadow:
-        inset 0 1px 3px rgba(200, 200, 200, 0.6), /* subtle inner light */
-        0 4px 8px rgba(140, 145, 170, 0.3),      /* soft outer shadow */
-        0 1px 0 rgba(255, 255, 255, 0.9);        /* top edge highlight */
+        inset 0 1px 3px rgba(200, 200, 200, 0.6), 
+        0 4px 8px rgba(140, 145, 170, 0.3),      
+        0 1px 0 rgba(255, 255, 255, 0.9);    
     padding: 20px;
     margin: 20px auto;
     width: 100%;
     max-width: 1205px;
+}
+
+#contact {
+    padding-bottom: 40px;
+    max-width: 1005px;
 }
 
 #home {
@@ -43,13 +47,13 @@ body {
     border-radius: 120px;
     border: 1px solid #d0d0d0;
     box-shadow:
-        inset 0 1px 3px rgba(200, 200, 200, 0.6), /* subtle inner light */
-        0 4px 8px rgba(140, 145, 170, 0.3),      /* soft outer shadow */
-        0 1px 0 rgba(255, 255, 255, 0.9);        /* top edge highlight */
+        inset 0 1px 3px rgba(200, 200, 200, 0.6),
+        0 4px 8px rgba(140, 145, 170, 0.3),      
+        0 1px 0 rgba(255, 255, 255, 0.9);       
     padding: 20px;
     margin-top: 120px;
     width: 100%;
-    max-width: 785px;
+    max-width: 885px;
 }
 
 .info {
@@ -318,7 +322,7 @@ a {
     border-radius: 400px;
 }
 
-#home, #aboutMe, #projects {
+#home, #aboutMe, #projects, #contact {
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(240, 248, 255, 0.3));
@@ -455,6 +459,16 @@ a {
     0 2px 0 #cdcdcd;
 }
 
+.button-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px auto;
+    width: 100%;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -464,7 +478,6 @@ a {
     margin: 20px auto;
     width: 100%;
 }
-
 
 .button::before {
     content: '';
@@ -529,10 +542,10 @@ body, html {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* Send it behind all other elements */
+  z-index: -1; 
   width: 100%;
   height: 100%;
-  pointer-events: none; /* So it doesn't block clicks */
+  pointer-events: none; 
 }
 
 
@@ -590,7 +603,7 @@ body, html {
   position: fixed;
   width: 10px;
   height: 10px;
-  background: #ffd1dc; /* Will be overwritten by JS pastel */
+  background: #ffd1dc; 
   clip-path: polygon(
     50% 0%,
     61% 35%,
