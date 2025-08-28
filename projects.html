@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
+    <canvas id="matterCanvas"></canvas>
     <div id="nameSection2">
         <a href="index.html" id="nameText2">
             <span class="word">destiny</span><br>
@@ -34,94 +34,51 @@
         </a>
     </div>
 
-    <section id="projects" class="content">
-        <h1>PROJECTS</h1>
-        <div class="slideshow-container">
+<section id="projects" class="content">
+  <h1>Projects</h1>
 
-            <div class="project fade">
-                <div class="numbertext">1 / 5</div>
-                <img class="projectImage" src="images/xdice.png" alt="XDice" style="width:325px">
-                <h2>XDice</h2>
-                <p>An iOS application to roll dice for tabletop games such as Dungeons and Dragons using Swift.</p>
-                <p>
-                <a href="https://github.com/destinybright/Xdice" id="github-link">
-                    Github
-                </a>
-                </p>
-            </div>
+  <div class="projects-grid">
+    <div class="project">
+      <h2>xdice</h2>
+      <p>An iOS application to roll dice for tabletop games such as Dungeons and Dragons using Swift.</p>
+      <p><a href="https://github.com/destinybright/Xdice" id="github-link">Github</a></p>
+    </div>
 
-            <div class="project fade">
-                <div class="numbertext">2 / 6</div>
-                <img class="projectImage" src="images/demo.png" alt="Stox" style="width:325px">
-                <h2>Stox</h2>
-                <p>A google chrome extension that allows users to check the current price and price change over time of different stocks.</p>
-                <p>
-                <a href="https://github.com/destinybright/stox" id="github-link">
-                    Github
-                </a>
-                </p>
-            </div>
+    <div class="project">
+      <h2>stox</h2>
+      <p>A google chrome extension that allows users to check the current price and price change over time of different stocks.</p>
+      <p><a href="https://github.com/destinybright/stox" id="github-link">Github</a></p>
+    </div>
 
-            <div class="project fade">
-                <div class="numbertext">3 / 6</div>
-                <img class="projectImage" src="images/tictactoe.gif" alt="tictactoe" style="width:225px">
-                <h2>Tic Tac Toe</h2>
-                <p>A tic tac toe game that you can play against an AI opponent made using C and SDL2.</p>
-                <p>
-                <a href="https://github.com/destinybright/tictactoe" id="github-link">
-                    Github
-                </a>
-                </p>
-            </div>
+    <div class="project">
+      <h2>tic tac toe</h2>
+      <p>A tic tac toe game that you can play against an AI opponent made using C and SDL2.</p>
+      <p><a href="https://github.com/destinybright/tictactoe" id="github-link">Github</a></p>
+    </div>
 
-            <div class="project fade">
-                <div class="numbertext">4 / 6</div>
-                <img class="projectImage" src="images/agility.PNG" alt="osrs bot" style="width:325px">
-                <h2>OSRS Skill Bot</h2>
-                <p>A discord bot that lets users retrieve and display their Old School Runescape (OSRS) skill levels<p>
-                <a href="https://github.com/destinybright/osrs-skill-bot" id="github-link">
-                    Github
-                </a>
-                </p>
-            </div>
+    <div class="project">
+      <h2>osrs skill bot</h2>
+      <p>A discord bot that lets users retrieve and display their Old School Runescape (OSRS) skill levels</p>
+      <p><a href="https://github.com/destinybright/osrs-skill-bot" id="github-link">Github</a></p>
+    </div>
 
-            <div class="project fade">
-                <div class="numbertext">5 / 6</div>
-                <img class="projectImage" src="images/exercise.png" alt="Exercise" style="width:325px">
-                <h2>Exercise App</h2>
-                <p>A web app to track exercises using MongoDB, Express, React, and Node.js to perform CRUD operations.</p>
-                <p>
-                <a href="https://github.com/destinybright/exercise-app" id="github-link">
-                    Github
-                </a>
-                </p>
-            </div>
+    <div class="project">
+      <h2>exercise app</h2>
+      <p>A web app to track exercises using MongoDB, Express, React, and Node.js to perform CRUD operations.</p>
+      <p><a href="https://github.com/destinybright/exercise-app" id="github-link">Github</a></p>
+    </div>
 
-            <div class="project fade">
-                <div class="numbertext">6 / 6</div>
-                <img class="projectImage" src="images/pooby.png" alt="Pooby" style="width:325px">
-                <h2>Pooby</h2>
-                <p>A web application that lets you hatch and play with a cute pet named Pooby.</p>
-                <p><a href="https://github.com/destinybright/pooby" id="github-link">
-                    Github
-                </a></p>
-            </div>
+    <div class="project">
+      <h2>pooby</h2>
+      <p>A web application that lets you hatch and play with a cute pet named Pooby.</p>
+      <p><a href="https://github.com/destinybright/pooby" id="github-link">Github</a></p>
+    </div>
+  </div>
 
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"
+        integrity="sha512-3CP+e7z5ieYYTIyvRvV3eGVYR67yXg5V2mWfg8pEJJd2mlh8tG/cnDv5scTmRztEYHTksBlpPOmxFOiMtHfZdQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./sketch.js"></script>
+    <script src="./script.js"></script>
 
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-            <span class="dot" onclick="currentSlide(6)"></span>
-        </div>
-    </section>
-
-    <script src="./slides.js"></script>
-</body>
-</html>
+</section>
